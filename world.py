@@ -1,4 +1,4 @@
-from unit import player
+
 
 class room:
     def __init__(self, name, description, interactables, door_id = "wood", locked=False, key=None):

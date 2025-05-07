@@ -1,4 +1,4 @@
-from unit import player
+
 
 class item:
     def __init__(self, name, description, item_type, **kwargs):
@@ -9,6 +9,8 @@ class item:
         self.heal_amount = kwargs.get("heal_amount") 
 
     def use(self, player, target=None):
+        if player is None:
+            raise ValueError("Player cannot be None.")
         if self.item_type == "potion":
             print(f"You use the {self.name}.")
             player.health += self.heal_amount
