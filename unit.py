@@ -1,3 +1,6 @@
+from item import item
+from world import room
+
 class unit:
     def __init__(self, name, health, damage):
         self.name = name
@@ -17,7 +20,7 @@ class unit:
 
 
 
-class Player(unit):
+class player(unit):
     def __init__(self):
         super().__init__(name="Player", health=100, damage=10)
         self.location = None

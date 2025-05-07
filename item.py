@@ -1,4 +1,6 @@
-class Item:
+from unit import player
+
+class item:
     def __init__(self, name, description, item_type, **kwargs):
         self.name = name
         self.description = description
@@ -22,3 +24,7 @@ class Item:
                 print(f"The {self.name} does not fit this door.")
         else:
             print(f"The {self.name} cannot be used in this way.")
+
+    def __str__(self):
+        return f"{self.name}: {self.description}"
+        
