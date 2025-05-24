@@ -1,6 +1,6 @@
 
 
-class unit:
+class Unit:
     def __init__(self, name, health, damage):
         self.name = name
         self.health = health
@@ -16,10 +16,13 @@ class unit:
                 print(f"you have been defeated by {self.name}!")
         else:
             print(f"{self.name} is already defeated.")
+    
+    def is_alive(self):
+        return self.health > 0
 
 
 
-class player(unit):
+class Player(Unit):
     def __init__(self):
         super().__init__(name="Player", health=100, damage=10)
         self.location = None
