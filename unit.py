@@ -26,14 +26,21 @@ class Unit:
 
 
 class Player(Unit):
-    def __init__(self):
-        super().__init__(name="Player", health=100, damage=10)
+    def __init__(self, name="Player"):
+        super().__init__(name, health=100, damage=10)
         self.location = None
         self.previous_location = None
         self.inventory = []
         
     def __str__(self):
         return f"{self.name} (Health: {self.health}, Damage: {self.damage})"
+    
+    def remove_item(self, item):
+        if item in self.inventory:
+            self.inventory.remove(item)
+            print(f"{item.name} has been removed from your inventory.")
+        else:
+            print(f"You don't have a {item.name} in your inventory.")
     
     def move(self, new_location):
         if new_location is not None:
@@ -50,10 +57,10 @@ class Player(Unit):
         else:
             print("Your inventory is empty.")
 
-    def use_item(self, item):
+    def use_item(self, item, target=None):
         if item in self.inventory:
             self.inventory.remove(item)
-            item.use(self)
+            item.use(self, target)
         else:
             print(f"You don't have a {item} in your inventory.")
         
@@ -69,7 +76,6 @@ class Player(Unit):
             print(f"You attack {target.name} for {attack_damage} damage.")
             target.health -= attack_damage
             if target.health <= 0:
-                target.is_alive = False
                 print(f"{target.name} has been defeated!")
             else:
                 print(f"{target.name} has {target.health} health remaining.")

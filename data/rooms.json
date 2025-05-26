@@ -1,0 +1,20 @@
+{
+  "foyer": {
+    "name": "Foyer",
+    "description": "A grand entrance hall with dusty portraits and a cold draft.",
+    "interactables": ["old_key", "chest", "new_key"],
+    "mob": null,
+    "locked": false,
+    "key": null,
+    "door_description": "An old creaky door leads out."
+  },
+  "library": {
+    "name": "Library",
+    "description": "Tall shelves line the walls filled with moldy books.",
+    "interactables": [],
+    "mob": "zombie",
+    "locked": true,
+    "key": "new_key",
+    "door_description": "An ominous door with a skull-shaped lock."
+  }
+}

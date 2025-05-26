@@ -1,0 +1,21 @@
+{
+  "old_key": {
+    "name": "Old Key",
+    "description": "A rusty key that looks ancient.",
+    "item_type": "key",
+    "location_description": "It’s sitting on a dusty table."
+  },
+  "healing_potion": {
+    "name": "Healing Potion",
+    "description": "A small bottle filled with red liquid.",
+    "item_type": "potion",
+    "heal_amount": 25,
+    "location_description": "Tucked inside a drawer."
+  },
+  "new_key": {
+    "name": "New Key",
+    "description": "A shiny key that glints in the light.",
+    "item_type": "key",
+    "location_description": "Hanging from a hook on the wall."
+  }
+}

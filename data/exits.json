@@ -1,0 +1,8 @@
+{
+  "foyer": {
+    "north": "library"
+  },
+  "library": {
+    "south": "foyer"
+  }
+}

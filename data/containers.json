@@ -1,0 +1,9 @@
+{
+  "chest": {
+    "name": "Wooden Chest",
+    "description": "A locked chest with iron bands.",
+    "items": ["healing_potion"],
+    "key": "old_key",
+    "is_locked": true
+  }
+}

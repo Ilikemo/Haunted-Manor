@@ -35,6 +35,22 @@ class Room:
         else:
             print("The door is already unlocked.")
 
+    def print_interactables(self):
+        if self.interactables:
+            print("You see the following items:")
+            for item in self.interactables:
+                print(item)
+        else:
+            print("There are no items to interact with here.")
+
+    def print_exits(self):
+        if self.exits:
+            print("Exits:")
+            for direction, room in self.exits.items():
+                print(f"- {direction}: {room.name}")
+        else:
+            print("There are no exits from this room.")
+
     def take_item(self, player, item):
         if isinstance(item, Item):
             if item in self.interactables:
@@ -49,10 +65,54 @@ class Room:
 
             
 class Container:
-    def __init__(self, name, description, items=None):
+    def __init__(self, name, description, items=None, key=None, is_locked=False):
         self.name = name
         self.description = description
         self.items = items if items is not None else []
+        self.key = key
+        self.is_locked = is_locked
+
+    def __str__(self):
+        return f"{self.name}(container): {self.description} (Locked: {self.is_locked})" 
+    
+    def unlock(self, key):
+        if self.is_locked and key == self.key:
+            self.is_locked = False
+            print(f"You unlock the {self.name} with the {key.name}.")
+        elif self.is_locked:
+            print("You don't have the key to unlock this container.")
+        else:
+            print("The container is already unlocked.")
+
+    def interact(self, player):
+        if self.is_locked:
+            print(f"The {self.name} is locked. You need a key to open it.")
+            response = input("Would you like to try to use a key if you have it? (yes/no) ")
+            print("\n")
+            if response.lower() == "yes":
+                if self.key in player.inventory:
+                    player.remove_item(self.key)
+                    self.unlock(self.key)
+            if response.lower() == "no":
+                print("You decide not to use a key.")
+                return
+        if self.items:
+            print(f"You open the {self.name} and find:")
+            for item in self.items:
+                print(f"- {item.name}: {item.description}")
+            response = input("Would you like to take the items? (yes/no) ")
+            print("\n")
+            if response.lower() == "yes":
+                for item in self.items:
+                    player.add_item(item)
+                self.items.clear()
+                print("You take the items.")
+            else:
+                print("You leave the items in the container.")
+        else:
+            print(f"The {self.name} is empty.")
+
+            
 
     def add_item(self, item):
         self.items.append(item)
