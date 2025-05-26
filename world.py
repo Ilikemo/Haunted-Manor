@@ -1,12 +1,13 @@
 from item import Item
 
 class Room:
-    def __init__(self, name, description, interactables, locked=False, key=None, door_description = None):
+    def __init__(self, name, description, interactables, mob = None, locked=False, key=None, door_description = None):
         self.name = name
         self.description = description
         self.door_description = door_description or "You see a wooden door."
         self.exits = {}                     #exits is a dictionary of directions and corresponding rooms
         self.interactables = interactables  #interactables is a list of objects that can be interacted with in the room
+        self.mob = mob                      
         self.locked = locked
         self.key = key
 
