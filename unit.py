@@ -14,6 +14,9 @@ class Unit:
             print(f"{self.name} attacks you for {attack_damage} damage.")
             target.health -= attack_damage
             target.grave_wound()
+            if target.is_alive():
+                print(f"You have {target.health} health remaining.")
+
         else:
             print(f"{self.name} is already defeated.")
     
@@ -29,6 +32,9 @@ class Player(Unit):
         self.previous_location = None
         self.inventory = []
         
+    def __str__(self):
+        return f"{self.name} (Health: {self.health}, Damage: {self.damage})"
+    
     def move(self, new_location):
         if new_location is not None:
             self.previous_location = self.location
@@ -36,9 +42,16 @@ class Player(Unit):
         else:
             print("You can't move to that location.")
     
+    def list_inventory(self):
+        if self.inventory:
+            print("You have the following items in your inventory:")
+            for item in self.inventory:
+                print(f"- {item.name}: {item.description}")
+        else:
+            print("Your inventory is empty.")
+
     def use_item(self, item):
         if item in self.inventory:
-            print(f"You use the {item}.")
             self.inventory.remove(item)
             item.use(self)
         else:
@@ -51,11 +64,15 @@ class Player(Unit):
             print("You can't add a None item to your inventory.")
     
     def attack(self, target):
+        attack_damage = (self.damage + random.randint(-5, 10))
         if target.health > 0:
-            print(f"You attack {target.name} for {self.damage} damage.")
-            target.health -= self.damage
+            print(f"You attack {target.name} for {attack_damage} damage.")
+            target.health -= attack_damage
             if target.health <= 0:
+                target.is_alive = False
                 print(f"{target.name} has been defeated!")
+            else:
+                print(f"{target.name} has {target.health} health remaining.")
         else:
             print(f"{target.name} is already defeated.")
 
