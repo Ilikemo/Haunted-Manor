@@ -1,9 +1,23 @@
 {
-  "chest": {
-    "name": "Wooden Chest",
-    "description": "A locked chest with iron bands.",
-    "items": ["healing_potion"],
-    "key": "old_key",
-    "is_locked": true
+  "bookshelf": {
+    "name": "Bookshelf",
+    "description": "Books sag with age, but something glints between them.",
+    "items": ["attic_key"],
+    "is_locked": false,
+    "key": null
+  },
+  "pantry": {
+    "name": "Pantry",
+    "description": "A dusty cabinet that might hide something.",
+    "items": ["basement_key"],
+    "is_locked": true,
+    "key": "old_key"
+  },
+  "trunk": {
+    "name": "Old Trunk",
+    "description": "An old trunk that creaks when you touch it.",
+    "items": ["healing_potion_1", "healing_potion_2"],
+    "is_locked": false,
+    "key": null
   }
 }

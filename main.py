@@ -11,7 +11,7 @@ def main():
 
     # Load the world
     rooms = load_world()
-    player.location = rooms["foyer"]  # Set starting room
+    player.location = rooms["entry_hall"]  # Set starting room
 
     try:
         game_loop(player)

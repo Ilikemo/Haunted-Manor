@@ -1,0 +1,22 @@
+{
+  "zombie": {
+    "name": "Zombie",
+    "health": 25,
+    "attack": 6
+  },
+  "spider_queen": {
+    "name": "Spider Queen",
+    "health": 40,
+    "attack": 10
+  },
+  "ghost_librarian": {
+    "name": "Ghost Librarian",
+    "health": 20,
+    "attack": 5
+  },
+  "possessed_astronomer": {
+    "name": "Possessed Astronomer",
+    "health": 30,
+    "attack": 7
+  }
+}

@@ -17,9 +17,13 @@ def load_world():
     with open("data/exits.json") as f:
         exits_data = json.load(f)
 
+    with open("data/mobs.json") as f:
+        mob_data = json.load(f)
+
     items = {}
     containers = {}
     rooms = {}
+    mobs = {}
 
     # Create item instances
     for key, data in item_data.items():
@@ -37,6 +41,10 @@ def load_world():
             is_locked=data.get("is_locked", False)
         )
 
+    # Create mob instances
+    for key, data in mob_data.items():
+        mobs[key] = Unit(data["name"], data["health"], data["attack"])  
+
     # Create room instances
     for key, data in room_data.items():
         interactables = []
@@ -47,9 +55,7 @@ def load_world():
             elif name in containers:
                 interactables.append(containers[name])
 
-        mob = None
-        if data.get("mob"):
-            mob = Unit(data["mob"], 30, 8)  # simple placeholder for now
+        mob = mobs.get(data.get("mob")) if data.get("mob") else None  
 
         room = Room(
             name=data["name"],

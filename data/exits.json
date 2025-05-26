@@ -1,8 +1,11 @@
 {
-  "foyer": {
-    "north": "library"
-  },
-  "library": {
-    "south": "foyer"
-  }
+  "entry_hall": {"north": "library", "east": "dining_room", "south": "garden"},
+  "library": {"south": "entry_hall", "up": "attic"},
+  "dining_room": {"west": "entry_hall", "north": "kitchen"},
+  "kitchen": {"south": "dining_room"},
+  "garden": {"north": "entry_hall", "east": "observatory"},
+  "attic": {"down": "library"},
+  "basement": {"up": "kitchen"},
+  "secret_room": {"west": "library"},
+  "observatory": {"west": "garden"}
 }

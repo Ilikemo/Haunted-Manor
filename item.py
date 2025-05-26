@@ -7,6 +7,7 @@ class Item:
         self.item_type = item_type
         self.location_description = kwargs.get("location_description", "")  #description of where the item is found
         self.heal_amount = kwargs.get("heal_amount") 
+        self.attack = kwargs.get("attack")
 
     def __str__(self):
         return f"{self.name}: {self.description} (Type: {self.item_type})"

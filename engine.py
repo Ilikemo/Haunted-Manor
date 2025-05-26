@@ -107,7 +107,7 @@ def enter_room(room, player):
     """
     print(f"You enter the {room.name}.")
     print(room.description)
-    print(f"You see:{', '.join(str(item) for item in room.interactables)}")
+    print(f"You see: {', '.join(str(item) for item in room.interactables)}")
     print(f"Exits: {', '.join(room.exits.keys())}")
     if room.mob and room.mob.is_alive():
         print(f"You see the following creature:{room.mob.name}")

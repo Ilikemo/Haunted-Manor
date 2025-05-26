@@ -1,20 +1,83 @@
 {
-  "foyer": {
-    "name": "Foyer",
-    "description": "A grand entrance hall with dusty portraits and a cold draft.",
-    "interactables": ["old_key", "chest", "new_key"],
+  "entry_hall": {
+    "name": "Entry Hall",
+    "description": "A grand but dusty hall with faded portraits on the walls.",
+    "interactables": ["old_key"],
     "mob": null,
     "locked": false,
     "key": null,
-    "door_description": "An old creaky door leads out."
+    "door_description": "The heavy wooden door creaks ominously."
   },
   "library": {
     "name": "Library",
-    "description": "Tall shelves line the walls filled with moldy books.",
+    "description": "Tall shelves filled with decaying books surround you.",
+    "interactables": ["silver_dagger", "bookshelf"],
+    "mob": "ghost_librarian",
+    "locked": false,
+    "key": null,
+    "door_description": ""
+  },
+  "kitchen": {
+    "name": "Kitchen",
+    "description": "Rusty utensils and shattered plates litter the counters.",
+    "interactables": ["rusty_knife", "pantry"],
+    "mob": null,
+    "locked": false,
+    "key": null,
+    "door_description": ""
+  },
+  "dining_room": {
+    "name": "Dining Room",
+    "description": "A massive table with broken chairs. Candle wax pools on the surface.",
+    "interactables": ["candelabra"],
+    "mob": null,
+    "locked": false,
+    "key": null,
+    "door_description": ""
+  },
+  "basement": {
+    "name": "Basement",
+    "description": "It's cold and damp. You hear something breathing.",
     "interactables": [],
     "mob": "zombie",
     "locked": true,
-    "key": "new_key",
-    "door_description": "An ominous door with a skull-shaped lock."
+    "key": "basement_key",
+    "door_description": "A locked hatch leads down into darkness."
+  },
+  "attic": {
+    "name": "Attic",
+    "description": "Cobwebs everywhere. A trunk sits in the center.",
+    "interactables": ["trunk"],
+    "mob": "spider_queen",
+    "locked": true,
+    "key": "attic_key",
+    "door_description": "A narrow stairway leads up, but the trapdoor is locked."
+  },
+  "garden": {
+    "name": "Garden",
+    "description": "Overgrown hedges and dead flowers. A strange statue stares at you.",
+    "interactables": ["garden_statue"],
+    "mob": null,
+    "locked": false,
+    "key": null,
+    "door_description": ""
+  },
+  "secret_room": {
+    "name": "Secret Room",
+    "description": "A hidden chamber filled with ancient relics.",
+    "interactables": ["healing_potion_2"],
+    "mob": null,
+    "locked": true,
+    "key": "silver_dagger",
+    "door_description": "The wall has an unusual outline like a hidden door."
+  },
+  "observatory": {
+    "name": "Observatory",
+    "description": "A telescope points to the stars through a cracked dome.",
+    "interactables": ["healing_potion_1"],
+    "mob": "possessed_astronomer",
+    "locked": false,
+    "key": null,
+    "door_description": ""
   }
 }

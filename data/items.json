@@ -1,21 +1,47 @@
 {
   "old_key": {
     "name": "Old Key",
-    "description": "A rusty key that looks ancient.",
-    "item_type": "key",
-    "location_description": "It’s sitting on a dusty table."
+    "description": "An old iron key, slightly rusted.",
+    "item_type": "key"
   },
-  "healing_potion": {
-    "name": "Healing Potion",
-    "description": "A small bottle filled with red liquid.",
-    "item_type": "potion",
-    "heal_amount": 25,
-    "location_description": "Tucked inside a drawer."
+  "rusty_knife": {
+    "name": "Rusty Knife",
+    "description": "Barely sharp, but better than nothing.",
+    "item_type": "weapon",
+    "attack": 12
   },
-  "new_key": {
-    "name": "New Key",
-    "description": "A shiny key that glints in the light.",
-    "item_type": "key",
-    "location_description": "Hanging from a hook on the wall."
+  "candelabra": {
+    "name": "Candelabra",
+    "description": "A heavy metal candelabra with melted wax.",
+    "item_type": "weapon",
+    "attack": 14
+  },
+  "silver_dagger": {
+    "name": "Silver Dagger",
+    "description": "A beautiful dagger with silver sheen.",
+    "item_type": "weapon",
+    "attack": 18
+  },
+  "healing_potion_1": {
+    "name": "Small Healing Potion",
+    "description": "Restores a small amount of health.",
+    "item_type": "usable",
+    "healing": 15
+  },
+  "healing_potion_2": {
+    "name": "Large Healing Potion",
+    "description": "Restores a significant amount of health.",
+    "item_type": "usable",
+    "healing": 30
+  },
+  "basement_key": {
+    "name": "Basement Key",
+    "description": "A small brass key labeled 'B'.",
+    "item_type": "key"
+  },
+  "attic_key": {
+    "name": "Attic Key",
+    "description": "An ornate key with a feather design.",
+    "item_type": "key"
   }
 }
